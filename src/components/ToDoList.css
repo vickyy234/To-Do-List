@@ -1,10 +1,41 @@
 body{
-    background-color: black;
+    background-color: hsl(210, 29%, 76%);
 }
 
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: hsl(210, 17%, 98%);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.input-container{
+    display: flex;
+    gap: 1vw;
+}
+
+li{
+    display: flex;
+    gap: 0.5vw;
+    background-color: rgb(95, 73, 159);
+    margin-bottom: 10px;
+    border-radius: 6px;
+    padding: 5px 10px;
+    min-width: 250px;
+}
+
+button{
+    background-color: rgb(152, 189, 70);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+h1{
+    font-size: 2rem;
+}
+
+span{
+    font-size: 1.3rem;    
 }
