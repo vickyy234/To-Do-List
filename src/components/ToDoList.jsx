@@ -38,7 +38,7 @@ function ToDoList() {
     }
 
     function moveDown(index) {
-        if(index < tasks.length - 1) {
+        if (index < tasks.length - 1) {
             [tasks[index], tasks[index + 1]] = [tasks[index + 1], tasks[index]];
             setTasks([...tasks]);
         }
@@ -54,29 +54,31 @@ function ToDoList() {
     return (
         <div className='container'>
             <h1>To-Do-List</h1>
-            <div className='input-container'> 
+            <div className='input-container'>
                 <input className='input'
                     type='text'
                     placeholder='Enter a Task...'
                     value={task}
                     onChange={handleChanges}
                 />
-                <button className='btn' onClick={addTask}>Add</button>
+                <button onClick={addTask}>Add</button>
             </div>
+
+            {tasks.length === 0 ? <h3>No Task Added!</h3> : null}
 
             <ol>
                 {tasks.map((item, index) => (
                     <li key={index}>
                         <span>{item}</span>
                         <button className='edit-btn' onClick={() => editTask(index)}>Edit</button>
-                        {index === 0 ? null : <button className='moveup-btn' onClick={() => moveUp(index)}>Move Up</button>}
-                        {index === tasks.length-1 ? null : <button className='movedown-btn' onClick={() => moveDown(index)}>Move Down</button>}
+                        <button className='moveup-btn' onClick={() => moveUp(index)}>Move Up</button>
+                        <button className='movedown-btn' onClick={() => moveDown(index)}>Move Down</button>
                         <button className='delete-btn' onClick={() => deleteTask(index)}>Delete</button>
                     </li>
                 ))}
             </ol>
 
-            <button onClick={deleteAllTasks}>Delete All</button>
+            {tasks.length < 2 ? null : <button onClick={deleteAllTasks}>Delete All</button>}
         </div>
     )
 }

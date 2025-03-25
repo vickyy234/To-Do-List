@@ -1,12 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 body{
     background-color: hsl(210, 29%, 76%);
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family:Arial, Helvetica, sans-serif;
+    gap: 10px;
+    margin: 5vh 0;
 }
 
 .input-container{
@@ -14,14 +24,20 @@ body{
     gap: 1vw;
 }
 
+ol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
 li{
     display: flex;
     gap: 0.5vw;
     background-color: rgb(95, 73, 159);
-    margin-bottom: 10px;
     border-radius: 6px;
     padding: 5px 10px;
-    min-width: 250px;
+    min-width: 400px;
 }
 
 button{
@@ -31,11 +47,18 @@ button{
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
+    font-size: 0.8rem;
 }
+
 h1{
     font-size: 2rem;
 }
 
 span{
-    font-size: 1.3rem;    
+    font-size: 1.3rem; 
+}
+
+.input-container input{
+    padding: 8px;
+    border-radius: 5px;
 }
