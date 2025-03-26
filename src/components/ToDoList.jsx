@@ -73,7 +73,7 @@ function ToDoList() {
                     value={task}
                     onChange={handleChanges}
                 />
-                {flag === 1 ? <button onClick={addTask}>Update Task</button> : <button onClick={addTask}>Add Task</button>}
+                {flag === 1 ? <button className='btn' onClick={addTask}>Update Task</button> : <button className='btn' onClick={addTask}>Add Task</button>}
             </div>
 
             {tasks.length === 0 ? <h3>No Task Added!</h3> : null}
@@ -82,15 +82,15 @@ function ToDoList() {
                 {tasks.map((item, index) => (
                     <li key={index}>
                         <span>{item}</span>
-                        <button className='edit-btn' onClick={() => editTask(index)}>Edit</button>
-                        <button className='moveup-btn' onClick={() => moveUp(index)}>Move Up</button>
-                        <button className='movedown-btn' onClick={() => moveDown(index)}>Move Down</button>
-                        <button className='delete-btn' onClick={() => deleteTask(index)}>Delete</button>
+                        <button onClick={() => editTask(index)}>✏️</button>
+                        <button onClick={() => moveUp(index)}>🔼</button>
+                        <button onClick={() => moveDown(index)}>🔽</button>
+                        <button onClick={() => deleteTask(index)}>🗑️</button>
                     </li>
                 ))}
             </ol>
 
-            {tasks.length > 1 && <button onClick={deleteAllTasks}>Delete All</button>}
+            {tasks.length > 1 && <button className='btn' onClick={deleteAllTasks}>Delete All</button>}
         </div>
     )
 }
