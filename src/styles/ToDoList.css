@@ -39,16 +39,6 @@ ol {
     gap: 10px;
 }
 
-li {
-    display: flex;
-    gap: 0.6vw;
-    background-color: #4A90E2;
-    border-radius: 6px;
-    padding: 5px 10px;
-    min-width: 400px;
-    color: white;
-}
-
 .btn {
     background-color: #28a745;
     color: white;
@@ -84,4 +74,20 @@ span {
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: #fff;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4A90E2;
+    border-radius: 6px;
+    padding: 5px 10px;
+    min-width: 400px;
+    color: white;
+}
+
+.task-actions {
+    display: flex;
+    gap: 5px;
 }
