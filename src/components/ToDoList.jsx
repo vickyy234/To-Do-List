@@ -73,7 +73,7 @@ function ToDoList() {
                     value={task}
                     onChange={handleChanges}
                 />
-                {flag === 1 ? <button onClick={addTask}>Update</button> : <button onClick={addTask}>Add</button>}
+                {flag === 1 ? <button onClick={addTask}>Update Task</button> : <button onClick={addTask}>Add Task</button>}
             </div>
 
             {tasks.length === 0 ? <h3>No Task Added!</h3> : null}
