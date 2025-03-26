@@ -67,7 +67,7 @@ function ToDoList() {
         <div className='container'>
             <h1>To-Do-List</h1>
             <div className='input-container'>
-                <input className='input'
+                <input
                     type='text'
                     placeholder='Enter a Task...'
                     value={task}

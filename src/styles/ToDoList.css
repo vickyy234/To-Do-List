@@ -1,17 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-body{
-    background-color: hsl(210, 29%, 76%);
+body {
+    background-color: #f4f4f4;
     box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,46 +19,63 @@ body{
     margin: 5vh 0;
 }
 
-.input-container{
+.input-container {
     display: flex;
     gap: 1vw;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 20px;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-ol{
+ol {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
-li{
+li {
     display: flex;
     gap: 0.5vw;
-    background-color: rgb(95, 73, 159);
+    background-color: #4A90E2;
     border-radius: 6px;
     padding: 5px 10px;
     min-width: 400px;
+    color: white;
 }
 
-button{
-    background-color: rgb(152, 189, 70);
+button {
+    background-color: #2ECC71;
     color: white;
     cursor: pointer;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
     font-size: 0.8rem;
+    transition: background 0.3s;
 }
 
-h1{
+button:hover {
+    background-color: #27AE60;
+}
+
+h1 {
     font-size: 2rem;
+    color: #333;
 }
 
-span{
-    font-size: 1.3rem; 
+span {
+    font-size: 1.3rem;
 }
 
-.input-container input{
+.input-container input {
     padding: 8px;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
 }
