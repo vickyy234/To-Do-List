@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import './ToDoList.css'
+import '../styles/ToDoList.css'
 
 function ToDoList() {
     const [tasks, setTasks] = useState([]);
     const [task, setTask] = useState('');
+    const [flag, setFlag] = useState(0);
+    const [editindex, setEditIndex] = useState(null);
 
     function handleChanges(event) {
         setTask(event.target.value);
@@ -14,7 +16,15 @@ function ToDoList() {
             alert('Please enter a task!');
             return;
         }
-        setTasks([...tasks, task]);
+        if (editindex !== null) {
+            [tasks[editindex]] = [task];
+            setEditIndex(null);
+            setFlag(0);
+        }
+        else {
+            setTasks([...tasks, task]);
+        }
+
         setTask('');
     }
 
@@ -24,7 +34,9 @@ function ToDoList() {
     }
 
     function editTask(index) {
-
+        setFlag(1);
+        setTask(tasks[index]);
+        setEditIndex(index);
     }
 
     function moveUp(index) {
@@ -61,7 +73,7 @@ function ToDoList() {
                     value={task}
                     onChange={handleChanges}
                 />
-                <button onClick={addTask}>Add</button>
+                {flag === 1 ? <button onClick={addTask}>Update</button> : <button onClick={addTask}>Add</button>}
             </div>
 
             {tasks.length === 0 ? <h3>No Task Added!</h3> : null}
@@ -78,7 +90,7 @@ function ToDoList() {
                 ))}
             </ol>
 
-            {tasks.length < 2 ? null : <button onClick={deleteAllTasks}>Delete All</button>}
+            {tasks.length > 1 && <button onClick={deleteAllTasks}>Delete All</button>}
         </div>
     )
 }
