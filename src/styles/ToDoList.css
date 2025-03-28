@@ -54,6 +54,7 @@ ol {
 
 button {
     cursor: pointer;
+    background-color: transparent;
 }
 
 button:hover {
