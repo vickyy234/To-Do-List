@@ -58,6 +58,7 @@ button {
 
 button:hover {
     transform: scale(1.07);
+    background-color: transparent;
 }
 
 h1 {
